@@ -15,13 +15,14 @@ class App extends Component {
         <Jumbotron>
           <div>
             <h1>Zak Dowsett</h1>
-            <p>Computer Scientist // Software Engineer</p>
-            <CursorText phrases={[
-                "Computer Scientist",
-                "Software Engineer",
-                "Full-Stack Developer",
-                "Blockchain Know-All"
-              ]}/>
+            <p>
+              <CursorText phrases={[
+                  "Computer Scientist",
+                  "Software Engineer",
+                  "Full-Stack Developer",
+                  "Blockchain Know-All"
+                ]}/>
+            </p>
           </div>
         </Jumbotron>
         <ResponsiveDrawer/>

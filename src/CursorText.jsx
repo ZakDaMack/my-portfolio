@@ -1,4 +1,5 @@
 import React from 'react';
+import './CursorText.sass';
 
 class CursorText extends React.Component {
 
@@ -7,19 +8,14 @@ class CursorText extends React.Component {
         this.state = {
             count: 0,
             wordIndex: 0,
-            iterateForward: true,
             waitCounter: 0 
         }        
     }
 
     tick() {
-        // forward hold 40x
-        // rear hold 20x
-
         let newWordIndex = this.state.wordIndex;
         let newCount = this.state.count;
         let newWaitCounter = this.state.waitCounter;
-        let newIterateForward = this.state.iterateForward;
 
         let currentWord = this.props.phrases[this.state.wordIndex];    
 
@@ -29,14 +25,14 @@ class CursorText extends React.Component {
         // if moving backwards 1x
 
         let counterRequired = 0;
-        if (newIterateForward && newCount > currentWord.length) {
-            counterRequired = 40;
-        } else if (newIterateForward) {
-            counterRequired = 4;
-        } else if (!newIterateForward && newCount === 0) {
+        if (newCount > currentWord.length && !(newCount > currentWord.length + 1)) {
+            counterRequired = 35;
+        } else if (newCount <= currentWord.length) {
+            counterRequired = 3;
+        } else if (newCount === 0) {
             counterRequired = 10;
         } else {
-            counterRequired = 1;
+            counterRequired = 0;
         }
 
         // do we need to go to the next character
@@ -49,7 +45,7 @@ class CursorText extends React.Component {
         }
 
         // are we at the end of the current word
-        if (newCount >= currentWord.length*2) {
+        if (newCount > currentWord.length*2 + 1) {
             newWordIndex++;
             newCount = 0;
 
@@ -58,18 +54,10 @@ class CursorText extends React.Component {
                 newWordIndex = 0;
         }
 
-        if ((newIterateForward && newCount === this.props.phrases[this.state.wordIndex].length) || (newCount === 0 && !newIterateForward)) 
-            newIterateForward = !newIterateForward;
-
-        if (this.state.count > this.props.phrases[this.state.wordIndex].length){
-
-        }
-
         this.setState({
             count: newCount,
             wordIndex: newWordIndex,
-            waitCounter: newWaitCounter,
-            iterateForward: newIterateForward
+            waitCounter: newWaitCounter
         })
     }
 
@@ -86,14 +74,15 @@ class CursorText extends React.Component {
 
     render() {
         let strLength = this.state.count;
-        if (strLength > this.props.phrases[this.state.wordIndex].length)
+        if (strLength > this.props.phrases[this.state.wordIndex].length + 1) 
             strLength = (this.props.phrases[this.state.wordIndex].length*2) - strLength;
         
         let text = this.props.phrases[this.state.wordIndex].substr(0, strLength);
+        let toAssign = (strLength === 0 || strLength > this.props.phrases[this.state.wordIndex].length) ? "blink" : "";
 
         return (
             <div>
-                <span>{text}</span><span id="cursor">|</span>
+                <span>{text}</span><span id="cursor" className={toAssign}>|</span>
             </div>
         );
     }
