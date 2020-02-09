@@ -1,12 +1,41 @@
-import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import './index.sass';
+import React, { Component } from 'react';
+import ResponsiveDrawer from './Header.jsx';
+import Jumbotron from './Jumbotron.jsx';
+import About from './AboutMe'
+import Theme from './styles/theme'
+import CursorText from './CursorText';
 
-ReactDOM.render(<App />, document.getElementById('root'));
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+class App extends Component {
+  render() {
+    return (
+      <Theme>
+        <Jumbotron>
+          <div>
+            <h1>Zak Dowsett</h1>
+            <p>Computer Scientist // Software Engineer</p>
+            <CursorText phrases={[
+                "Computer Scientist",
+                "Software Engineer",
+                "Full-Stack Developer",
+                "Blockchain Know-All"
+              ]}/>
+          </div>
+        </Jumbotron>
+        <ResponsiveDrawer/>
+        <Jumbotron>
+          <About imgsrc="">
+          </About>
+        </Jumbotron>
+
+      </Theme>
+    );
+  }
+}
+
+ReactDOM.render(
+  <App />,
+  document.getElementById('root')
+);
