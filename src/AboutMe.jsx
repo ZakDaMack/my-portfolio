@@ -5,28 +5,28 @@ import { Typography } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 
 const style = theme => ({
-    bigAvatar: {
-      margin: 10,
-      width: 150,
-      height: 150
-    }, 
     root: {
+        position: "absolute",
+        bottom: 0,
         padding: theme.spacing(3, 2),
-        maxWidth: '80em',
-        width: '90%'
+        width: '100%'
     },
+    text: {
+        maxWidth: '80em',
+        textAlign: 'center'
+    }
   });
 
 class About extends React.Component {
 render() {
 const { classes } = this.props;
 return (
-    <Paper className={classes.root}>
-        <Avatar alt="Zak Dowsett" variant="circle" src={this.props.imgsrc} className={classes.bigAvatar} >ZD</Avatar>
-        <Typography variant="subtitle1">
+
+    <Paper className={classes.root} square="true">
+        <Typography className={classes.text} variant="subtitle1">
             {this.props.children}
         </Typography>
-    </Paper>    
+    </Paper>
 );
 }
 }
