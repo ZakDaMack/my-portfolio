@@ -81,9 +81,9 @@ class CursorText extends React.Component {
         let toAssign = (strLength === 0 || strLength > this.props.phrases[this.state.wordIndex].length) ? "blink" : "";
 
         return (
-            <div>
-                <span>{text}</span><span id="cursor" className={toAssign}>|</span>
-            </div>
+            <>
+                <span>{text}</span><span id="cursor" className={toAssign}>|</span>  
+            </>
         );
     }
 }

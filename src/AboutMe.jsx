@@ -22,7 +22,7 @@ render() {
 const { classes } = this.props;
 return (
 
-    <Paper className={classes.root} square="true">
+    <Paper className={classes.root} square>
         <Typography className={classes.text} variant="subtitle1">
             {this.props.children}
         </Typography>
