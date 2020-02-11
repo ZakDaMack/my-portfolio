@@ -35,8 +35,11 @@ class App extends Component {
         </Jumbotron>
         <ResponsiveDrawer/>
         <Jumbotron>
-        <ExternalLinks />
-        <ExternalLinks />
+          <ExternalLinks links={[
+            {title: 'LinkedIn', link: 'https://www.linkedin.com/in/zak-dowsett-4a7455131/'},
+            {title: 'GitHub', link: 'https://www.github.com/ZakDaMack'},
+            {title: 'Mail Me', link: 'mailto:z.dowsett@outlook.com'}
+          ]}/>
         </Jumbotron>
 
       </Theme>

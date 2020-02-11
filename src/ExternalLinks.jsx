@@ -5,10 +5,13 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import Zoom from '@material-ui/core/Zoom';
+import GitHubIcon from '@material-ui/icons/GitHub';
 
 const style = theme => ({
     root: {
       minWidth: 275,
+      margin: '1em'
     },
     bullet: {
       display: 'inline-block',
@@ -27,32 +30,43 @@ const style = theme => ({
 class ExternalLinks extends React.Component {
   
     render() {
-        const { classes } = this.props;
-        const bull = <span className={classes.bullet}>•</span>;
-
+      const { classes } = this.props;
+      const cards = this.props.links.map((obj, i) => {
         return (
-            <Card className={classes.root}>
-              <CardContent>
-                <Typography className={classes.title} color="textSecondary" gutterBottom>
-                  Word of the Day
-                </Typography>
-                <Typography variant="h5" component="h2">
-                  be{bull}nev{bull}o{bull}lent
-                </Typography>
-                <Typography className={classes.pos} color="textSecondary">
-                  adjective
-                </Typography>
-                <Typography variant="body2" component="p">
-                  well meaning and kindly.
-                  <br />
-                  {'"a benevolent smile"'}
-                </Typography>
-              </CardContent>
-              <CardActions>
-                <Button size="small">Learn More</Button>
-              </CardActions>
-            </Card>
-          );
+          <Zoom in='true' style={{transitionDelay: (i * 500).toString() + 'ms'}}>
+            <a href={obj.link}>
+              <Card className={classes.root}>
+                <CardContent>
+                  <Typography variant="h5" component="h2">
+                    {obj.title}
+                  </Typography>
+                </CardContent>
+              </Card>
+            </a>
+          </Zoom>
+          
+        );
+      });
+
+      return (
+        <div>
+          {cards}
+        </div>
+      );
+
+      // return (
+      //   <div>
+      //     {links.map((obj, index) => (
+      //     <Card className={classes.root}>
+      //       <CardContent>
+      //         <Typography variant="h5" component="h2">
+      //           {obj.title}
+      //         </Typography>
+      //       </CardContent>
+      //     </Card>
+      //   ))}
+      //   </div>
+      // );
     }
   }
 
