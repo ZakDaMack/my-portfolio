@@ -38,15 +38,17 @@ const useStyles = makeStyles({
   
 
 export default function ExternalLinks(props) {  
-  const [visible, setVisible] = React.useState(false);
 
-  
+  const [visible, setVisible] = React.useState(false);
   const trigger = useScrollTrigger();
-  
+  if (trigger && !visible) {
+    setVisible(trigger);
+  }
+
       const classes = useStyles();
       const cards = props.links.map((obj, i) => {
         return (
-          <Zoom in={trigger} style={{transitionDelay: ((i+ 1) * 250).toString() + 'ms'}} key={i}>
+          <Zoom in={visible} style={{transitionDelay: ((i+ 1) * 250).toString() + 'ms'}} key={i}>
             <a href={obj.link}>
               <Card className={classes.root}>
                 <CardContent>
@@ -63,34 +65,6 @@ export default function ExternalLinks(props) {
           
         );
       });
-
-
-
-      // return (
-        
-      //   <div className={classes.sensorHolder}>
-      //     <VisibilitySensor delayedCall scrollCheck>
-      //       {({isVisible}) => {
-      //         console.log(isVisible);
-              
-      //         if (isVisible)
-      //         return (
-      //           <div className={classes.cardGroup}>
-      //             {cards}
-      //           </div>
-      //         )
-              
-      //         else
-      //         return (
-      //           <div className={classes.cardGroup}>
-      //           </div>
-      //         )
-      //       } 
-      //       }
-      //     </VisibilitySensor>
-      //   </div>
-      
-      // );
 
       return (
         <div className={classes.cardGroup}>
