@@ -1,10 +1,11 @@
-import React, { useRef, useEffect } from 'react';
+import React from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Tab from '@material-ui/core/Tab';
 import Tabs from '@material-ui/core/Tabs';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
+import { HashLink as Link } from 'react-router-hash-link'; 
 
 const useStyles = makeStyles(theme => ({
   title: {
@@ -55,8 +56,8 @@ function ResponsiveDrawer(props) {
           textColor="secondary"
           value={value}
           centered>
-            {['About Me', 'Resume', 'Portfolio', 'Links'].map((text, index) => (
-              <Tab className={classes.tab} label={text} key={index}/>
+            {['Home', 'Skills', 'My History', 'External Links'].map((text, index) => (
+              <Tab className={classes.tab} label={text} key={index} component={Link} to={'#' + text.toLowerCase().replace(' ', '-')} scroll={el => el.scrollIntoView({behavior: 'smooth'})}/>
             ))}
           </Tabs>
         </Toolbar>

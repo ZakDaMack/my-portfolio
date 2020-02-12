@@ -1,14 +1,12 @@
 import React from 'react';
-import ReactDOM from "react-dom";
-import { makeStyles, withStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Zoom from '@material-ui/core/Zoom';
 import SvgIcon from '@material-ui/core/SvgIcon';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
+import Link from '@material-ui/core/Link';
 
 
 const useStyles = makeStyles({
@@ -25,7 +23,8 @@ const useStyles = makeStyles({
       minWidth: '1em'
     },
     title: {
-      fontSize: 14,
+      fontSize: '1em',
+      textDecoration: 'none'
     },
     icon: {
       fontSize: '5em'
@@ -45,30 +44,30 @@ export default function ExternalLinks(props) {
     setVisible(trigger);
   }
 
-      const classes = useStyles();
-      const cards = props.links.map((obj, i) => {
-        return (
-          <Zoom in={visible} style={{transitionDelay: ((i+ 1) * 250).toString() + 'ms'}} key={i}>
-            <a href={obj.link}>
-              <Card className={classes.root}>
-                <CardContent>
-                  <SvgIcon htmlColor={obj.colour} className={classes.icon}>
-                    {obj.icon}
-                  </SvgIcon>
-                  <Typography variant="h5" component="h2">
-                    {obj.title}
-                  </Typography>
-                </CardContent>
-              </Card>
-            </a>
-          </Zoom>
-          
-        );
-      });
+  const classes = useStyles();
+  const cards = props.links.map((obj, i) => {
+    return (
+      <Zoom in={visible} style={{transitionDelay: ((i+ 1) * 250).toString() + 'ms'}} key={i}>
+        <Link href={obj.link}>
+          <Card className={classes.root}>
+            <CardContent>
+              <SvgIcon htmlColor={obj.colour} className={classes.icon}>
+                {obj.icon}
+              </SvgIcon>
+              <Typography variant="h5" component="h2" className={classes.title}>
+                {obj.title}
+              </Typography>
+            </CardContent>
+          </Card>
+        </Link>
+      </Zoom>
+      
+    );
+  });
 
-      return (
-        <div className={classes.cardGroup}>
-          {cards}
-       </div>
-      )
-      }
+  return (
+    <div id='external-links' className={classes.cardGroup}>
+      {cards}
+    </div>
+  )
+}
