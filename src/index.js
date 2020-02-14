@@ -42,7 +42,8 @@ class App extends Component {
           </Splash>
           <Jumbotron>
             <Skills skills={[
-              {title: 'Java', img: '/javaimage.png', rating: 4, main: 'Doggo ipsum extremely cuuuuuute borking doggo big ol fluffer dat tungg tho yapper, wow such tempt borkf much ruin diet borking doggo.'}
+              {title: 'Java', img: '/javaimage.png', rating: 4, main: 'Doggo ipsum extremely cuuuuuute borking doggo big ol fluffer dat tungg tho yapper, wow such tempt borkf much ruin diet borking doggo.'},
+              {title: '.NET', img: '/csharpimage.png', rating: 4, main: 'Doggo ipsum extremely cuuuuuute borking doggo big ol fluffer dat tungg tho yapper, wow such tempt borkf much ruin diet borking doggo.'},
             ]}/>
           </Jumbotron>
           <Jumbotron id='my-history' background='#03ADC5' />

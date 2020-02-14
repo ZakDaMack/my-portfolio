@@ -18,7 +18,9 @@ const useStyles = makeStyles(theme => ({
     },
     cardGroup: {
       display: 'flex',
-      flexDirection: 'row'
+      flexDirection: 'row',
+      flexWrap: 'wrap',
+      justifyContent: 'center'
     },
     sensorHolder: {
       minHeight: '1em',
@@ -35,7 +37,7 @@ const useStyles = makeStyles(theme => ({
       marginBottom: 12,
     },
     header: {
-      background: 'url("javaimage.png")',
+      // background: 'url("javaimage.png")',
       backgroundPosition: 'center',
       backgroundSize: 'cover',
       width: 400,
@@ -50,7 +52,9 @@ function CustomHeader(props) {
     <CardHeader className={classes.header}
       classes={{
         root: {
-          background: 'url(' + props.img + ')'
+          borderTopLeftRadius: 4,
+          borderTopRightRadius: 4,
+          background: 'url("' + props.img + '")'
         }
       }}
     />
@@ -70,7 +74,7 @@ export default function Skills(props) {
   const classes = useStyles();
   const cards = props.skills.map((obj, i) => {
     return (
-      <Slide in={trigger} direction='up' key={i}>
+      <Slide in={trigger} style={{transitionDelay: '250ms'}} direction='up' key={i}>
         <Card className={classes.root}>
           <CustomHeader img={obj.img}/>
           <CardContent>
