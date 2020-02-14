@@ -47,7 +47,7 @@ export default function ExternalLinks(props) {
   const classes = useStyles();
   const cards = props.links.map((obj, i) => {
     return (
-      <Zoom in={visible} style={{transitionDelay: ((i+ 1) * 250).toString() + 'ms'}} key={i}>
+      <Zoom in={visible} style={{transitionDelay: ((i+ 4) * 250).toString() + 'ms'}} key={i}>
         <Link href={obj.link}>
           <Card className={classes.root}>
             <CardContent>
@@ -61,7 +61,6 @@ export default function ExternalLinks(props) {
           </Card>
         </Link>
       </Zoom>
-      
     );
   });
 
