@@ -9,6 +9,7 @@ import Theme from './styles/theme'
 import CursorText from './CursorText';
 import ExternalLinks from './ExternalLinks';
 import Skills from './Skills';
+import Footer from './Footer';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 import config from './config.json';
@@ -43,6 +44,7 @@ class App extends Component {
           <Jumbotron background='url("/landscape.jpg")'>
             <ExternalLinks links={config.links} />
           </Jumbotron>
+          <Footer />
         </Theme>
       </Router>
     );
