@@ -12,18 +12,12 @@ const useStyles = makeStyles(theme => ({
     position: "absolute",
     fontWeight: "lighter",
     [theme.breakpoints.down('sm')]: {
-      width: `0`,
+      width: 0,
     },
   },
   appBar: {
-    [theme.breakpoints.up('xs')]: {
-      width: `100%`,
-    },
-    letterSpacing: '1px'
-  },
-  content: {
-    flexGrow: 1,
-    padding: theme.spacing(0),
+    width: `100%`,
+    letterSpacing: 1
   },
   tabbar: {
     flexGrow: 1,
@@ -57,7 +51,8 @@ function ResponsiveDrawer(props) {
           value={value}
           centered>
             {['Home', 'Skills', 'My History', 'External Links'].map((text, index) => (
-              <Tab className={classes.tab} label={text} key={index} component={Link} to={'#' + text.toLowerCase().replace(' ', '-')} scroll={el => el.scrollIntoView({behavior: 'smooth'})}/>
+              <Tab className={classes.tab} label={text} key={index} component={Link}
+              to={'#' + text.toLowerCase().replace(' ', '-')} scroll={el => el.scrollIntoView({behavior: 'smooth'})}/>
             ))}
           </Tabs>
         </Toolbar>

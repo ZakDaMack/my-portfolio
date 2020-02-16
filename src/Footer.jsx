@@ -15,8 +15,8 @@ export default function Footer() {
     
     return (
         <Paper className={classes.root} >
-            <Box textAlign='right' >
-                <Typography variant="subtitle2">
+            <Box textAlign='right'>
+                <Typography variant="subtitle1">
                     © {new Date().getFullYear()} Zak Dowsett All Rights Reserved
                 </Typography>
             </Box>

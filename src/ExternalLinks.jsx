@@ -28,12 +28,13 @@ const useStyles = makeStyles({
   },
   cardGroup: {
     display: 'flex',
-    flexDirection: 'row'
+    flexDirection: 'row',
+    flexWrap: 'wrap'
   }
 });
 
 export default function ExternalLinks(props) {  
-  
+
   const [visible, setVisible] = React.useState(false);
   const trigger = useScrollTrigger();
   if (trigger && !visible) {
