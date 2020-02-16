@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
-import Slide from '@material-ui/core/Slide';
+import Grow from '@material-ui/core/Grow';
 import SvgIcon from '@material-ui/core/SvgIcon';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import Rating from '@material-ui/lab/Rating';
@@ -33,15 +33,11 @@ const useStyles = makeStyles(theme => ({
     icon: {
       fontSize: '5em'
     },
-    pos: {
-      marginBottom: 12,
-    },
     header: {
-      // background: 'url("javaimage.png")',
-      backgroundPosition: 'center',
-      backgroundSize: 'cover',
       width: 400,
-      height: 200
+      height: 200,
+      borderTopLeftRadius: 4,
+      borderTopRightRadius: 4
     }
   }));
 
@@ -49,13 +45,12 @@ function CustomHeader(props) {
   const classes = useStyles();
 
   return (
-    <CardHeader className={classes.header}
-      classes={{
-        root: {
-          borderTopLeftRadius: 4,
-          borderTopRightRadius: 4,
-          background: 'url("' + props.img + '")'
-        }
+    <CardHeader
+      className={classes.header}
+      style={{
+        background: 'url("' + props.img + '")',
+        backgroundPosition: 'center',
+        backgroundSize: 'cover'
       }}
     />
   );
@@ -64,7 +59,6 @@ function CustomHeader(props) {
   
 
 export default function Skills(props) {  
-
   const [visible, setVisible] = React.useState(false);
   const trigger = useScrollTrigger();
   if (trigger && !visible) {
@@ -74,7 +68,7 @@ export default function Skills(props) {
   const classes = useStyles();
   const cards = props.skills.map((obj, i) => {
     return (
-      <Slide in={trigger} style={{transitionDelay: '250ms'}} direction='up' key={i}>
+      <Grow in={visible} style={{transitionDelay: '250ms'}} key={i}>
         <Card className={classes.root}>
           <CustomHeader img={obj.img}/>
           <CardContent>
@@ -86,12 +80,12 @@ export default function Skills(props) {
             <Rating value={obj.rating} readonly />
           </CardContent>
         </Card>
-      </Slide>
+      </Grow>
     );
   });
 
   return (
-    <div id='skills' className={classes.cardGroup}>
+    <div className={classes.cardGroup}>
       {cards}
     </div>
   )
