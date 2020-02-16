@@ -77,7 +77,7 @@ export default function Skills(props) {
               <Typography variant='body1' paragraph>{obj.main}</Typography>
             </Box>
             <Divider />
-            <Rating value={obj.rating} readonly />
+            <Rating value={obj.rating} readOnly />
           </CardContent>
         </Card>
       </Grow>
