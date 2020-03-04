@@ -1,5 +1,5 @@
 {
-    "about": "",
+    "intro": "Doggo ipsum extremely cuuuuuute borking doggo big ol fluffer dat tungg tho yapper, wow such tempt borkf much ruin diet borking doggo. Smol extremely cuuuuuute borking doggo boofers bork clouds, most angery pupper I have ever seen long woofer wow very biscit woofer. You are doin me a concern smol heck the neighborhood pupper very hand that feed shibe, wow very biscit sub woofer. Heckin good boys borkf maximum borkdrive big ol ur givin me a spook many pats extremely cuuuuuute, long water shoob super chub waggy wags boof. big ol pupper fluffer you are doing me the shock. Long bois shibe corgo fluffer aqua doggo mlem, thicc wrinkler pupper thicc. noodle horse lotsa pats. Fluffer heck blep you are doin me a concern adorable doggo smol, shooberino long bois tungg. Doing me a frighten what a nice floof lotsa pats pupperino, such treat.",
     "cursorTextPhrases": [
         "Computer Scientist",
         "Software Engineer",
@@ -9,59 +9,69 @@
     ],
     "skills": [
         {
-            "title": "Java",
-            "img": "/images/java.png",
-            "rating": 4,
-            "main": "Doggo ipsum extremely cuuuuuute borking doggo big ol fluffer dat tungg tho yapper, wow such tempt borkf much ruin diet borking doggo."
+            "header": "Languages",
+            "cards": [
+                {
+                    "title": "Java",
+                    "img": "/images/java.png",
+                    "rating": 4,
+                    "main": "Doggo ipsum extremely cuuuuuute borking doggo big ol fluffer dat tungg tho yapper, wow such tempt borkf much ruin diet borking doggo."
+                },
+                {
+                    "title": "C#",
+                    "img": "/images/csharp.png",
+                    "rating": 4,
+                    "main": "Doggo ipsum extremely cuuuuuute borking doggo big ol fluffer dat tungg tho yapper, wow such tempt borkf much ruin diet borking doggo."
+                },
+                {
+                    "title": "Mongo DB",
+                    "img": "/images/mongodb.png",
+                    "rating": 4,
+                    "main": "Doggo ipsum extremely cuuuuuute borking doggo big ol fluffer dat tungg tho yapper, wow such tempt borkf much ruin diet borking doggo."
+                },
+                {
+                    "title": "SQL",
+                    "img": "/images/pgsql.png",
+                    "rating": 4,
+                    "main": "Doggo ipsum extremely cuuuuuute borking doggo big ol fluffer dat tungg tho yapper, wow such tempt borkf much ruin diet borking doggo."
+                },
+                {
+                    "title": "HTML Core 3",
+                    "img": "/images/website.png",
+                    "rating": 2,
+                    "main": "Doggo ipsum extremely cuuuuuute borking doggo big ol fluffer dat tungg tho yapper, wow such tempt borkf much ruin diet borking doggo."
+                }
+            ]
         },
         {
-            "title": ".NET",
-            "img": "/images/csharp.png",
-            "rating": 4,
-            "main": "Doggo ipsum extremely cuuuuuute borking doggo big ol fluffer dat tungg tho yapper, wow such tempt borkf much ruin diet borking doggo."
-        },
-        {
-            "title": "Apache Framework",
-            "img": "/images/apache.png",
-            "rating": 4,
-            "main": "Doggo ipsum extremely cuuuuuute borking doggo big ol fluffer dat tungg tho yapper, wow such tempt borkf much ruin diet borking doggo."
-        },
-        {
-            "title": "Linux",
-            "img": "/images/linux.png",
-            "rating": 4,
-            "main": "Doggo ipsum extremely cuuuuuute borking doggo big ol fluffer dat tungg tho yapper, wow such tempt borkf much ruin diet borking doggo."
-        },
-        {
-            "title": "Mongo DB",
-            "img": "/images/mongodb.png",
-            "rating": 4,
-            "main": "Doggo ipsum extremely cuuuuuute borking doggo big ol fluffer dat tungg tho yapper, wow such tempt borkf much ruin diet borking doggo."
-        },
-        {
-            "title": "SQL",
-            "img": "/images/pgsql.png",
-            "rating": 4,
-            "main": "Doggo ipsum extremely cuuuuuute borking doggo big ol fluffer dat tungg tho yapper, wow such tempt borkf much ruin diet borking doggo."
-        },
-        {
-            "title": "React",
-            "img": "/images/react.png",
-            "rating": 2,
-            "main": "Doggo ipsum extremely cuuuuuute borking doggo big ol fluffer dat tungg tho yapper, wow such tempt borkf much ruin diet borking doggo."
-        },
-        {
-            "title": "HTML Core 3",
-            "img": "/images/website.png",
-            "rating": 2,
-            "main": "Doggo ipsum extremely cuuuuuute borking doggo big ol fluffer dat tungg tho yapper, wow such tempt borkf much ruin diet borking doggo."
-        },
-        {
-            "title": "Blockchain",
-            "img": "/images/blockchain.png",
-            "rating": 2,
-            "main": "Doggo ipsum extremely cuuuuuute borking doggo big ol fluffer dat tungg tho yapper, wow such tempt borkf much ruin diet borking doggo."
-        }
+            "header": "Frameworks",
+            "cards": [
+                {
+                    "title": "React",
+                    "img": "/images/react.png",
+                    "rating": 2,
+                    "main": "Doggo ipsum extremely cuuuuuute borking doggo big ol fluffer dat tungg tho yapper, wow such tempt borkf much ruin diet borking doggo."
+                },
+                {
+                    "title": "Apache Framework",
+                    "img": "/images/apache.png",
+                    "rating": 4,
+                    "main": "Doggo ipsum extremely cuuuuuute borking doggo big ol fluffer dat tungg tho yapper, wow such tempt borkf much ruin diet borking doggo."
+                },
+                {
+                    "title": "Linux",
+                    "img": "/images/linux.png",
+                    "rating": 4,
+                    "main": "Doggo ipsum extremely cuuuuuute borking doggo big ol fluffer dat tungg tho yapper, wow such tempt borkf much ruin diet borking doggo."
+                },
+                {
+                    "title": "Blockchain",
+                    "img": "/images/blockchain.png",
+                    "rating": 2,
+                    "main": "Doggo ipsum extremely cuuuuuute borking doggo big ol fluffer dat tungg tho yapper, wow such tempt borkf much ruin diet borking doggo."
+                }
+            ]
+        } 
     ],
     "links": [
         {

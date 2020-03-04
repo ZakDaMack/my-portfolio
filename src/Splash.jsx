@@ -106,17 +106,17 @@ const defaultConfig = {
       }
     },
     "retina_detect": true
-  };
+};
 
 function Splash(props) {
-    return ( 
-        <Jumbotron id='home' background='linear-gradient(345deg, rgba(34,195,145,1) 0%, rgba(156,45,253,1) 100%)'>
-            <Particles params={props.config ?? defaultConfig} style={{position: 'absolute', height: '100%', width: '100%', top: 0, left: 0}}/>
-            <div style={{zIndex: 1}}>
-                {props.children}
-            </div>
-        </Jumbotron>
-    );
+  return ( 
+    <Jumbotron id='home' background='linear-gradient(347deg, rgba(34,195,145,1) 0%, rgba(156,45,253,1) 100%)'>
+        <Particles params={props.config ?? defaultConfig} style={{position: 'absolute', height: '100%', width: '100%', top: 0, left: 0}}/>
+        <div style={{zIndex: 1}}>
+            {props.children}
+        </div>
+    </Jumbotron>
+  );
 }
 
 export default Splash;
