@@ -34,9 +34,9 @@ class App extends Component {
           <Jumbotron id='skills' background='#5000ca'>
             <Skills skills={config.skills}/>
           </Jumbotron>
-          <Jumbotron id='my-history' background='#03ADC5'>
+          <div id='my-history' style={{background: '#03ADC5'}}>
             <Timeline />
-          </Jumbotron>
+          </div>
           <Footer links={config.links}/>
         </Theme>
       </Router>
