@@ -10,8 +10,9 @@ import { CardHeader, Divider, Box } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    width: 400,
-    margin: '1em',
+    maxWidth: 400,
+    width: '90%',
+    margin: '0.5em',
     overflow: 'revert'
   },
   cardGroup: {
@@ -32,7 +33,7 @@ const useStyles = makeStyles(theme => ({
     fontSize: '5em'
   },
   header: {
-    width: 400,
+    width: '100%',
     height: 200,
     borderTopLeftRadius: 4,
     borderTopRightRadius: 4

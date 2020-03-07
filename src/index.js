@@ -10,6 +10,7 @@ import CursorText from './CursorText';
 import Timeline from './Timeline';
 import Skills from './Skills';
 import Footer from './Footer';
+import PictureSeperator from './PictureSeperator';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 import config from './config.json';
@@ -34,6 +35,7 @@ class App extends Component {
           <Jumbotron id='skills' background='#5000ca'>
             <Skills skills={config.skills}/>
           </Jumbotron>
+          <PictureSeperator top='#5000ca' bottom='#03ADC5' image='./landscape.jpg' />
           <div id='my-history' style={{background: '#03ADC5'}}>
             <Timeline />
           </div>

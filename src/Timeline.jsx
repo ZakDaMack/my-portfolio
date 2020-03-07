@@ -7,6 +7,9 @@ class Timeline extends React.Component {
     super(props);
   }
 
+  drawTimeline(events) {
+  }
+
   render() { 
     return (
       <div className="root">
@@ -15,20 +18,19 @@ class Timeline extends React.Component {
           <div className="container left">
             <div className="content">
               <Typography variant='h3' color="textSecondary">2016</Typography>
-              <Typography variant='body' color="textSecondary" paragraph>Lorem ipsum..</Typography>
+              <Typography variant='h5' color="textSecondary" paragraph>Lorem ipsum..</Typography>
             </div>
           </div>
 
           <div className="container right">
             <div className="content">
               <Typography variant='h3' color="textSecondary">Transalis</Typography>
-              <Typography variant='title' color="textSecondary">2019 - 2020</Typography>
+              <Typography variant='h5' color="textSecondary">2019 - 2020</Typography>
               <Typography variant='body1' color="textSecondary" paragraph>Lorem ipsum..</Typography>
             </div>
           </div>
 
         </div> 
-
       </div>
     );
   }

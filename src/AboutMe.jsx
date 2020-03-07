@@ -1,17 +1,28 @@
 import React from 'react';
+import {useSpring, animated} from 'react-spring'
 import Avatar from '@material-ui/core/Avatar';
 import Link from '@material-ui/core/Link';
 import SvgIcon from '@material-ui/core/SvgIcon';
 import ReactHtmlParser from 'react-html-parser'; 
 import Typography from '@material-ui/core/Typography';
-import { withStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/styles';
 
-const style = theme => ({
+const useStyles = makeStyles(theme => ({
+    merge: {
+        position: 'absolute',
+        display: 'block',
+        // top: -150,
+        // height: 150,
+        width: '100%',
+        background: 'linear-gradient(transparent, rgb(34,195,145))'
+        // 2s cubic-bezier(.17,.67,.83,.67)
+    },
     root: {
         padding: theme.spacing(3, 2),
         width: '100%',
         display: 'flex',
-        background: 'rgb(34,195,145)'
+        background: 'rgb(34,195,145)',
+        paddingTop: '10em'
     },
     text: {
         maxWidth: '80em',
@@ -40,6 +51,7 @@ const style = theme => ({
         justifyContent: 'space-evenly',
         alignItems: 'center',
         '& a svg': {
+            background: 'white',
             fontSize: '6em',
             '&:hover': {
                 boxShadow: '0 4px 20px 0 rgba(0,0,0,0.12)',
@@ -51,12 +63,28 @@ const style = theme => ({
         background: '#5000ca',
         display: 'block'
     }
-  });
+  }));
 
-class About extends React.Component {
-    render() {
-        const { classes } = this.props;
-        const links = this.props.links.map((obj) => {
+  
+
+export default function About(props) {
+    const classes = useStyles();
+
+        const animation = useSpring({
+            to: {
+                height: 250,
+                top: -250, 
+            },
+            
+            from: {
+                height: 150,
+                top: -150
+            },
+            //reset: true,
+            reverse: true
+        });
+
+        const links = props.links.map((obj) => {
             return (
                 <Link href={obj.link}>
                     <SvgIcon htmlColor={obj.colour} className={classes.icon}>
@@ -67,14 +95,15 @@ class About extends React.Component {
         });
 
         return (
-            <div>
+            <div style={{position: 'relative'}}>
+                <animated.div style={animation} className={classes.merge}></animated.div>
                 <div className={classes.root}>
                     <div className={classes.avatarContainer}>
                         <Avatar className={classes.avatar}>ZD</Avatar>
                     </div>
                     <div className={classes.secondContainer}>
                         <Typography className={classes.text} variant="subtitle1" color="primary">
-                            {this.props.children}
+                            {props.children}
                         </Typography>
                         <div className={classes.links}>
                             {links}
@@ -85,9 +114,6 @@ class About extends React.Component {
                     <path fill="rgb(34,195,145)" fill-opacity="1" d="M0,96L26.7,122.7C53.3,149,107,203,160,192C213.3,181,267,107,320,85.3C373.3,64,427,96,480,138.7C533.3,181,587,235,640,261.3C693.3,288,747,288,800,256C853.3,224,907,160,960,154.7C1013.3,149,1067,203,1120,213.3C1173.3,224,1227,192,1280,197.3C1333.3,203,1387,245,1413,266.7L1440,288L1440,0L1413.3,0C1386.7,0,1333,0,1280,0C1226.7,0,1173,0,1120,0C1066.7,0,1013,0,960,0C906.7,0,853,0,800,0C746.7,0,693,0,640,0C586.7,0,533,0,480,0C426.7,0,373,0,320,0C266.7,0,213,0,160,0C106.7,0,53,0,27,0L0,0Z"></path>]
                 </svg>
             </div>
-            
         );
     }
-}
 
-export default withStyles(style)(About);
