@@ -37,7 +37,7 @@ class App extends Component {
           </Jumbotron>
           <PictureSeperator top='#5000ca' bottom='#03ADC5' image='./landscape.jpg' />
           <div id='history' style={{background: '#03ADC5'}}>
-            <Timeline />
+            <Timeline events={config.events} />
           </div>
           <Footer links={config.links}/>
         </Theme>

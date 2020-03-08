@@ -77,7 +77,7 @@ export default function About(props) {
         const animation = useSpring({
             to: {
                 height: 250,
-                top: -250, 
+                top: -250
             },   
             from: {
                 height: 150,

@@ -26,9 +26,9 @@ class CursorText extends React.Component {
 
         let counterRequired = 0;
         if (newCount > currentWord.length && !(newCount > currentWord.length + 1)) {
-            counterRequired = 35;
+            counterRequired = 45;
         } else if (newCount <= currentWord.length) {
-            counterRequired = 3;
+            counterRequired = 2;
         } else if (newCount === 0) {
             counterRequired = 10;
         } else {

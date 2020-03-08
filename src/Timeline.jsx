@@ -8,29 +8,26 @@ class Timeline extends React.Component {
   }
 
   drawTimeline(events) {
+    let isLeft = false;
+    return events.map((obj, i) => {
+      isLeft = !isLeft;
+      return (
+        <div className={'container ' + (isLeft ? 'left' : 'right')} key={i}>
+          <div className="content">
+            <Typography variant='h3' color="textSecondary">{obj.title}</Typography>
+            <Typography variant='h5' color="textSecondary">{obj.date}</Typography>
+            <Typography variant='body1' color="textSecondary" paragraph>{obj.text}</Typography>
+          </div>
+        </div>
+      );
+    })
   }
 
   render() { 
     return (
       <div className="root">
         <div className="timeline">
-
-          <div className="container left">
-            <div className="content">
-              <Typography variant='h3' color="textSecondary">uni</Typography>
-              <Typography variant='h5' color="textSecondary">2018</Typography>
-              <Typography variant='body1' color="textSecondary" paragraph>Lorem ipsum..</Typography>
-            </div>
-          </div>
-
-          <div className="container right">
-            <div className="content">
-              <Typography variant='h3' color="textSecondary">Transalis</Typography>
-              <Typography variant='h5' color="textSecondary">2019 - 2020</Typography>
-              <Typography variant='body1' color="textSecondary" paragraph>Lorem ipsum..</Typography>
-            </div>
-          </div>
-
+          {this.drawTimeline(this.props.events)}
         </div> 
       </div>
     );
