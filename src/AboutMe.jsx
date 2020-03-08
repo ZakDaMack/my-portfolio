@@ -25,7 +25,7 @@ const useStyles = makeStyles(theme => ({
         paddingTop: '10em',
         [theme.breakpoints.down('sm')]: {
             flexDirection: 'column'
-        },
+        }
     },
     text: {
         maxWidth: '80em',
@@ -78,8 +78,7 @@ export default function About(props) {
             to: {
                 height: 250,
                 top: -250, 
-            },
-            
+            },   
             from: {
                 height: 150,
                 top: -150

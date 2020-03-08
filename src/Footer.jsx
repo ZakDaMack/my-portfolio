@@ -11,7 +11,13 @@ const useStyles = makeStyles(theme => ({
     root: {
         padding: theme.spacing(1),
         display: 'flex',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        [theme.breakpoints.down('xs')]: {
+            flexDirection: 'column',
+            '& *': {
+                textAlign: 'center'
+            }
+        }
     }
 }));
 
