@@ -22,12 +22,16 @@ const useStyles = makeStyles(theme => ({
         width: '100%',
         display: 'flex',
         background: 'rgb(34,195,145)',
-        paddingTop: '10em'
+        paddingTop: '10em',
+        [theme.breakpoints.down('sm')]: {
+            flexDirection: 'column'
+        },
     },
     text: {
         maxWidth: '80em',
         textAlign: 'center',
-        margin: '0 auto'
+        margin: '0 auto',
+        padding: '1em'
     },
     avatarContainer: {
         flexGrow: 1
@@ -95,14 +99,14 @@ export default function About(props) {
         });
 
         return (
-            <div style={{position: 'relative'}}>
+            <div id='about' style={{position: 'relative'}}>
                 <animated.div style={animation} className={classes.merge}></animated.div>
                 <div className={classes.root}>
                     <div className={classes.avatarContainer}>
                         <Avatar className={classes.avatar}>ZD</Avatar>
                     </div>
                     <div className={classes.secondContainer}>
-                        <Typography className={classes.text} variant="subtitle1" color="primary">
+                        <Typography className={classes.text} variant="body1" color="primary">
                             {props.children}
                         </Typography>
                         <div className={classes.links}>

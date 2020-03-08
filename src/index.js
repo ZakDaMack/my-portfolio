@@ -36,7 +36,7 @@ class App extends Component {
             <Skills skills={config.skills}/>
           </Jumbotron>
           <PictureSeperator top='#5000ca' bottom='#03ADC5' image='./landscape.jpg' />
-          <div id='my-history' style={{background: '#03ADC5'}}>
+          <div id='history' style={{background: '#03ADC5'}}>
             <Timeline />
           </div>
           <Footer links={config.links}/>

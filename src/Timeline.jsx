@@ -17,8 +17,9 @@ class Timeline extends React.Component {
 
           <div className="container left">
             <div className="content">
-              <Typography variant='h3' color="textSecondary">2016</Typography>
-              <Typography variant='h5' color="textSecondary" paragraph>Lorem ipsum..</Typography>
+              <Typography variant='h3' color="textSecondary">uni</Typography>
+              <Typography variant='h5' color="textSecondary">2018</Typography>
+              <Typography variant='body1' color="textSecondary" paragraph>Lorem ipsum..</Typography>
             </div>
           </div>
 

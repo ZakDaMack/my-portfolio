@@ -50,7 +50,7 @@ function ResponsiveDrawer(props) {
           textColor="secondary"
           value={value}
           centered>
-            {['Home', 'Skills', 'My History', 'External Links'].map((text, index) => (
+            {['Home', 'About', 'Skills', 'History'].map((text, index) => (
               <Tab className={classes.tab} label={text} key={index} component={Link}
               to={'#' + text.toLowerCase().replace(' ', '-')} scroll={el => el.scrollIntoView({behavior: 'smooth'})}/>
             ))}
