@@ -1,6 +1,6 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
-import './Timeline.sass';
+import '../styles/Timeline.sass';
 
 class Timeline extends React.Component {
   constructor(props) {

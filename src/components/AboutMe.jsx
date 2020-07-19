@@ -28,6 +28,7 @@ const useStyles = makeStyles(theme => ({
         }
     },
     text: {
+        fontSize: '1.5em',
         maxWidth: '80em',
         textAlign: 'center',
         margin: '0 auto',
@@ -103,7 +104,9 @@ export default function About(props) {
             <animated.div style={animation} className={classes.merge}></animated.div>
             <div className={classes.root}>
                 <div className={classes.avatarContainer}>
-                    <Avatar className={classes.avatar}>ZD</Avatar>
+                    {
+                        props.image ? <Avatar src={props.image} alt="Zak Dowsett" className={classes.avatar} /> : <Avatar className={classes.avatar}>ZD</Avatar>
+                    }
                 </div>
                 <div className={classes.secondContainer}>
                     <Typography className={classes.text} variant="body1" color="primary">

@@ -33,6 +33,7 @@ const useStyles = makeStyles(theme => ({
     fontSize: '5em'
   },
   header: {
+    paddingTop: '1em',
     width: '100%',
     height: 200,
     borderTopLeftRadius: 4,

@@ -1,5 +1,5 @@
 import React from 'react';
-import './CursorText.sass';
+import '../styles/CursorText.sass';
 
 class CursorText extends React.Component {
 

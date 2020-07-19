@@ -1,5 +1,5 @@
 import React from 'react';
-import './Jumbotron.sass';
+import '../styles/Jumbotron.sass';
 
 class Jumbotron extends React.Component {
     render() {

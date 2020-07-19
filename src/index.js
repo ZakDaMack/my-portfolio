@@ -1,16 +1,16 @@
 import ReactDOM from 'react-dom';
-import './index.sass';
+import './styles/index.sass';
 import React, { Component } from 'react';
-import ResponsiveDrawer from './Header';
-import Jumbotron from './Jumbotron';
-import About from './AboutMe'
-import Splash from './Splash'
+import ResponsiveDrawer from './components/Header';
+import Jumbotron from './components/Jumbotron';
+import About from './components/AboutMe'
+import Splash from './components/Splash'
 import Theme from './styles/theme'
-import CursorText from './CursorText';
-import Timeline from './Timeline';
-import Skills from './Skills';
-import Footer from './Footer';
-import PictureSeperator from './PictureSeperator';
+import CursorText from './components/CursorText';
+import Timeline from './components/Timeline';
+import Skills from './components/Skills';
+import Footer from './components/Footer';
+import PictureSeperator from './components/PictureSeperator';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 import config from './config.json';
@@ -29,7 +29,7 @@ class App extends Component {
               </p>
             </div>
           </Splash>       
-          <About links={config.links}>
+          <About image={config.avatar} links={config.links}>
             {config.intro}
           </About>
           <Jumbotron id='skills' background='#5000ca'>
