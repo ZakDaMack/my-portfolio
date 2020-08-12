@@ -14,7 +14,11 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
+<<<<<<< HEAD
   "./precache-manifest.21039e5c3a3dc002b6957425329d9d7f.js"
+=======
+  "./precache-manifest.27039e9ab99a27dc95178fc014a82583.js"
+>>>>>>> parent of 7310647... updated config and added pics
 );
 
 self.addEventListener('message', (event) => {
